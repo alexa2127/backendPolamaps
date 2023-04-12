@@ -1,11 +1,11 @@
 package com.ecommerce.backend.modelo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Getter
@@ -15,8 +15,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="idBoletas")
 
 public class Boletas {
+
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer idBoletas;
@@ -32,15 +34,19 @@ public class Boletas {
         private  String imgUrlBoleta;
 
         @Column(name = "fechaBoleta")
-        @JsonFormat(pattern = "yyyyMMdd")
+        //@JsonFormat(pattern = "yyyyMMdd")
         private Date fechaBoleta;
-        @JsonIgnore
+
+
         @JoinColumn(name = "id_establecimientos")
         @ManyToOne
         Bares bares;
-        @JsonIgnore
+
+
         @JoinColumn(name = "id_promocion")
         @ManyToOne
         Promocion promocion;
+
+
     }
 

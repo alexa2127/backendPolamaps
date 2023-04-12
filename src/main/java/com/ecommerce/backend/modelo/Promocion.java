@@ -25,7 +25,6 @@ public class Promocion {
     private  Integer tipo;
 
 
-
     @OneToMany(mappedBy = "promocion", cascade = CascadeType.ALL)
     List<Boletas> boletas;
 }

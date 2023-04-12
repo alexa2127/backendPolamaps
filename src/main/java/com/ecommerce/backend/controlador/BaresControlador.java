@@ -2,7 +2,6 @@ package com.ecommerce.backend.controlador;
 
 import com.ecommerce.backend.modelo.Bares;
 import com.ecommerce.backend.servicio.BaresServicio;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +30,7 @@ public class BaresControlador {
 
         return baresServicio.buscarBaresPorId(idEstablecimiento);
     }
-    @GetMapping("/listar-bares")
+    @GetMapping("/listar")
     public List<Bares> buscarTodo(){
 
         return baresServicio.buscarTodo();

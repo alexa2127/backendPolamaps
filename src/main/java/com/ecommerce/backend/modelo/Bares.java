@@ -1,5 +1,8 @@
 package com.ecommerce.backend.modelo;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,6 +18,7 @@ import java.util.Objects;
 @Entity
 @Table(name="establecimientos")
 public class Bares {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEstablecimientos;
